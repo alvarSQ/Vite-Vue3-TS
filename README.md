@@ -1,5 +1,7 @@
 # Модальное окно с деревом папок.
 
+[modal-tree-folders](https://alvarsq.github.io/modal-tree-folders/)
+
 Тестовое задание:
 Цель:
 Разработать Vue 3 компонент с использованием TypeScript и Composition API, реализующий функционал модального окна с деревом папок.
