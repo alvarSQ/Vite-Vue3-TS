@@ -45,33 +45,5 @@ const emit = defineEmits(["closeModal", "select"]);
 </script>
 
 <style scoped lang="scss">
-.modal {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 390px;
-  min-width: 340px;
-  padding: 20px;
-  gap: 20px;
-  border-radius: 15px;
-  background-color: white;
-  z-index: 99;
-  @media (max-width: 412px) {
-    width: 100%;
-  }
-}
 
-.dark {
-  background: #000;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  z-index: 98;
-}
 </style>

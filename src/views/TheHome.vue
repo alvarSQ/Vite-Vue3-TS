@@ -77,7 +77,13 @@ const onFolderSelect = (id: number) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
-  gap: 30px
+  width: 515px;
+  gap: 30px;
+  p {
+    text-align: center;
+  }
+  @media (max-width: 516px) {
+    width: 290px;
+  }
 }
 </style>
