@@ -1,15 +1,13 @@
 <template>
   <div class="modal">
     <h2>{{ nameFolders }}</h2>
-    <ul>
-      <Folder
-        v-for="folder in folders"
-        :key="folder.id"
-        :folder="folder"
-        :idFolder="idFolder"
-        @addId="addId"
-      />
-    </ul>
+    <el-tree
+      :data="folders"
+      :props="defaultProps"
+      default-expand-all
+      check-strictly
+      @node-click="handleNodeClick"
+    />
     <button class="btn" @click="$emit('select', idFolder)">Готово</button>
     <button class="btn" @click="$emit('closeModal')">Закрыть</button>
   </div>
@@ -17,7 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import Folder from "./Folder.vue";
 import { ref } from "vue";
 
 interface IFolder {
@@ -31,17 +28,19 @@ const props = defineProps<{
   nameFolders: string;
 }>();
 
-const emit = defineEmits(["select", "closeModal"]);
+const defaultProps = {
+  children: "children",
+  label: "name",
+};
 
 const idFolder = ref(0);
 
-const addId = (id: number) => {
-  if (idFolder.value !== id) {
-    idFolder.value = id;
-  } else {
-    idFolder.value = 0;
-  }
-};
+const handleNodeClick = (folder: IFolder) => {
+  idFolder.value = folder.id;
+  console.log(folder.id)
+}
+
+const emit = defineEmits(["closeModal", "select"]);
 </script>
 
 <style scoped lang="scss">
@@ -73,9 +72,5 @@ const addId = (id: number) => {
   height: 100%;
   opacity: 0.7;
   z-index: 98;
-}
-
-li {
-  cursor: pointer;
 }
 </style>
