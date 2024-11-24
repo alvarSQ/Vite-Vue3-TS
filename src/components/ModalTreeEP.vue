@@ -6,6 +6,7 @@
       :props="defaultProps"
       default-expand-all
       check-strictly
+      :expand-on-click-node="false"
       @node-click="handleNodeClick"
     />
     <button class="btn" @click="$emit('select', idFolder)">Готово</button>

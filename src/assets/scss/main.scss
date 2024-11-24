@@ -106,3 +106,6 @@ section,
   border-radius: 10px;
 }
 
+.el-tree-node:focus>.el-tree-node__content {
+    color: rgb(65, 68, 236)!important;
+}

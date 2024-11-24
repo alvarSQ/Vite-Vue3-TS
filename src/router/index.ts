@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
+      path: '/modal-tree-folders',
       name: 'home',
       component: HomeView
     },

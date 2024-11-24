@@ -37,7 +37,7 @@ const addId = (id: number) => {
 
 <style scoped lang="scss">
 .selected {
-  color: green;
+  color: rgb(65, 68, 236);
 }
 
 .an-selected {
